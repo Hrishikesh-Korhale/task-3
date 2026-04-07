@@ -143,3 +143,77 @@
   letter-spacing: 0.6px;
   opacity: 0.7;
 }
+
+
+
+@media (max-width: 1024px) {
+  .overview-main {
+    padding: 60px 20px 100px;
+  }
+
+  .oval-bg {
+    width: 1000px;
+    height: 1000px;
+    bottom: -50%;
+  }
+
+  .overview-content {
+    max-width: 460px;
+  }
+
+  .tag-pill {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  .benefits-list li {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .oval-bg {
+    display: none;
+  }
+
+  .overview-main {
+    padding: 40px 16px 60px;
+  }
+
+  .overview-content {
+    max-width: 100%;
+  }
+
+  .tag-pill {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .subtitle-italic {
+    font-size: 13px;
+  }
+
+  .benefits-list li {
+    font-size: 13px;
+    margin: 5px 0;
+  }
+
+  .vtp-line {
+    font-size: 13px;
+  }
+
+  .privilege-text {
+    font-size: 12px;
+  }
+
+  .star-line::before,
+  .star-line::after {
+    width: 40px;
+  }
+
+  .star-line img {
+    width: 12px;
+  }
+}
