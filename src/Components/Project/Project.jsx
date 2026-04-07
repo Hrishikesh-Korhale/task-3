@@ -4,16 +4,16 @@ import star from "../../assets/images/star.png";
 import ProjectDetails from "../Project Details/ProjectDetails";
 
 const projects = [
-  { name: "VTP Aurelia - Kharadi, Pune", id: 1 },
-  { name: "Monarque by VTP Luxe - Hinjawadi, Pune", id: 2 },
-  { name: "VTP VOLARE - Hinjawadi, Pune", id: 3 },
-  { name: "EARTH 1 BY VTP LUXE - Mahalunge, Pune", id: 4 },
-  { name: "CIELO by VTP Luxe - Bavdhan Pune", id: 5 },
-  { name: "FLAMANTE BY VTP LUXE - Kharadi, Pune", id: 6 },
-  { name: "VTP DOLCE VITA - New Kharadi, Pune", id: 7 },
-  { name: "VTP EUPHORIA - New Kharadi, Pune", id: 8 },
-  { name: "VTP Codename Vibrance - Baner Sus, Pune", id: 9 },
-  { name: "Altamira by VTP Luxe - Kharadi, Pune", id: 10 },
+  { name: "VTP Aurelia - Kharadi, Pune", id: "proj_001" },
+  { name: "Monarque by VTP Luxe - Hinjawadi, Pune", id: "proj_002" },
+  { name: "VTP VOLARE - Hinjawadi, Pune", id: "proj_003" },
+  { name: "EARTH 1 BY VTP LUXE - Mahalunge, Pune", id: "proj_004" },
+  { name: "CIELO by VTP Luxe - Bavdhan Pune", id: "proj_005" },
+  { name: "FLAMANTE BY VTP LUXE - Kharadi, Pune", id: "proj_006" },
+  { name: "VTP DOLCE VITA - New Kharadi, Pune", id: "proj_007" },
+  { name: "VTP EUPHORIA - New Kharadi, Pune", id: "proj_008" },
+  { name: "VTP Codename Vibrance - Baner Sus, Pune", id: "proj_009" },
+  { name: "Altamira by VTP Luxe - Kharadi, Pune", id: "proj_010" },
 ];
 
 const ProjectSection = () => {
@@ -96,7 +96,7 @@ const ProjectSection = () => {
         </div>
       </section>
       {/* Pass selected project */}
-      {selected && <ProjectDetails Project_Id={"proj_001"} />}{" "}
+      {selected && <ProjectDetails Project_Id={selected} />}
     </>
   );
 };
