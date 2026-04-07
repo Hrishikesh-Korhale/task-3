@@ -139,6 +139,7 @@
 }
 
 /* ✅ DROPDOWN LIST (MAIN FIX) */
+
 .dropdown-list {
   position: absolute;
   top: 110%;
@@ -228,28 +229,33 @@
 
 
 /* DIVIDER */
-.divider {
+.star {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  width: 100%;
   margin: 20px 0;
 }
 
-.divider::before,
-.divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #9ca3af;
+
+.star::before,
+.star::after {
+   content: "";
+  width: 120px;  
+  height: 2px;
+  background: #1f2a44;
+;
+  /* opacity: 0.5; */
 }
 
-.divider img {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
+
+
+
+.star-line img {
+  width: 14px;
+  height: auto;
 }
+
 
 /* HASHTAG */
 .content h3 {

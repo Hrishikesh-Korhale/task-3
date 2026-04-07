@@ -84,8 +84,8 @@ const ProjectSection = () => {
             Lowest Down Payment Ever!
           </h1>
 
-          <div className="divider">
-            <img src={star} alt="star" />
+          <div className="star">
+            <img src={star} alt="" />
           </div>
 
           <h3>
@@ -94,7 +94,7 @@ const ProjectSection = () => {
         </div>
       </section>
       {/* Pass selected project */}
-      {selected && <ProjectDetails projectName={selected} />}{" "}
+      {selected && <ProjectDetails projectName={"proj_001"} />}{" "}
     </>
   );
 };
