@@ -146,7 +146,7 @@ const ProjectDetails = ({ Project_Id = null }) => {
               <div
                 className="pd_gallery_track"
                 style={{
-                  transform: `translateX(-${currentIndex * 50}%)`,
+                  transform: `translateX(-${currentIndex * 40}%)`,
                 }}
               >
                 {project.gallery.map((img, i) => (
@@ -238,7 +238,7 @@ const ProjectDetails = ({ Project_Id = null }) => {
               <div
                 className="pd_gallery_track"
                 style={{
-                  transform: `translateX(-${currentIndex * 50}%)`,
+                  transform: `translateX(-${currentIndex * 40}%)`,
                 }}
               >
                 {project.amenities.map((a, i) => (
