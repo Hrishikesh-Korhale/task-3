@@ -29,7 +29,8 @@
   width: 38%;
   height: 400px;
 
-  background: url("../../assets/images/project_building.webp") no-repeat bottom right;
+  background: url("../../assets/images/project_building.webp") no-repeat bottom
+    right;
   background-size: contain;
 
   z-index: 0;
@@ -64,7 +65,6 @@
   transform: translateX(-50%);
   text-align: center;
   font-family: "BuenosAires";
-
 }
 
 .badge-text span {
@@ -73,7 +73,6 @@
   color: #6b7280;
   font-family: "BuenosAires";
   font-weight: 300;
-
 }
 
 .badge-text h4 {
@@ -103,7 +102,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
@@ -151,7 +150,7 @@
   overflow-y: auto;
 
   z-index: 9999; /* 🔥 FIX */
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* ITEMS */
@@ -226,8 +225,6 @@
   line-height: 1.4;
 }
 
-
-
 /* DIVIDER */
 .star {
   display: flex;
@@ -237,25 +234,19 @@
   margin: 20px 0;
 }
 
-
 .star::before,
 .star::after {
-   content: "";
-  width: 120px;  
+  content: "";
+  width: 120px;
   height: 2px;
   background: #1f2a44;
-;
   /* opacity: 0.5; */
 }
-
-
-
 
 .star-line img {
   width: 14px;
   height: auto;
 }
-
 
 /* HASHTAG */
 .content h3 {
@@ -267,9 +258,86 @@
   font-weight: 700;
 }
 
-.middle-word{
+.middle-word {
   font-family: "BuenosAires";
 
   /* font-size: 70px; */
   font-weight: 400;
+}
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+  .bg-one {
+    display: none;
+  }
+
+  .badge-wrapper {
+    display: none;
+  }
+
+  .dropdown-wrapper {
+    width: calc(100% - 40px);
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dropdown {
+    height: 50px;
+    padding: 0 18px;
+  }
+
+  /* Uppercase dropdown text */
+  .dropdown span {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .content {
+    top: 155px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+  }
+
+  .content h1 {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+  .star::before,
+  .star::after {
+    width: 70px;
+  }
+
+  /* ✅ Left card — wider, moved up, better padding */
+  .left-card {
+    top: 295px; /* moved up */
+    width: calc(60% + 20px); /* wider */
+    padding: 20px 24px;
+  }
+
+  .left-card p {
+    font-size: 12px;
+    padding-left: 8px;
+    margin-bottom: 6px;
+  }
+
+  .left-card h2 {
+    font-size: 22px;
+    padding-left: 16px;
+    line-height: 1.4;
+  }
+
+  /* ✅ Buildings — bigger and more visible */
+  .bg-buildings {
+    width: 75%;
+    height: 320px;
+    opacity: 1;
+  }
 }
