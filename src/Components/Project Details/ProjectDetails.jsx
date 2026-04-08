@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./ProjectDetails.css";
 import { Project_Details } from "./projectData";
-
 const TABS = ["Gallery", "Overview", "Highlights", "Unit Plans", "Amenities"];
 
 const SendIcon = () => (
@@ -44,6 +43,7 @@ const PdfIcon = () => (
 
 const ProjectDetails = ({ Project_Id = null }) => {
   const [activeTab, setActiveTab] = useState("Unit Plans");
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const project = Project_Details.find((p) => p.id === Project_Id);
   if (!project) {
@@ -80,14 +80,16 @@ const ProjectDetails = ({ Project_Id = null }) => {
         </nav>
 
         {/* Download Brochure */}
-        <button
-          className="pd_download_btn"
-          onClick={() => alert("Download Brochure")}
-        >
-          <span>Download Brochure</span>
-          <span className="pd_btn_sep" />
-          <PdfIcon />
-        </button>
+        <div className="pd_pdf_section">
+          <button
+            className="pd_download_btn"
+            onClick={() => alert("Download Brochure")}
+          >
+            <span>Download Brochure</span>
+            <span className="pd_btn_sep" />
+            <PdfIcon />
+          </button>
+        </div>
       </div>
 
       {/* ── TAB CONTENT ── */}
@@ -140,43 +142,140 @@ const ProjectDetails = ({ Project_Id = null }) => {
 
         {activeTab === "Gallery" && (
           <div className="pd_gallery">
-            {project.gallery.map((img) => (
-              <div key={img.id} className="pd_gallery_item">
-                <img src={img.url} alt={img.caption} />
-                <p>{img.caption}</p>
+            <div className="pd_gallery_viewport">
+              <div
+                className="pd_gallery_track"
+                style={{
+                  transform: `translateX(-${currentIndex * 40}%)`,
+                }}
+              >
+                {project.gallery.map((img, i) => (
+                  <div
+                    key={i}
+                    className={`pd_slide ${i === currentIndex ? "active" : ""}`}
+                  >
+                    <img src={img.url} alt={img.caption} />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* CONTROLS */}
+            <div className="pd_gallery_controls">
+              <button
+                onClick={() =>
+                  setCurrentIndex(
+                    (prev) =>
+                      (prev - 1 + project.gallery.length) %
+                      project.gallery.length,
+                  )
+                }
+              >
+                {"<"}
+              </button>
+
+              <button
+                onClick={() =>
+                  setCurrentIndex((prev) => (prev + 1) % project.gallery.length)
+                }
+              >
+                {">"}
+              </button>
+            </div>
           </div>
         )}
 
         {activeTab === "Overview" && (
-          <div className="pd_overview">
-            <img src={project.overview.image} alt={project.overview.heading} />
-            <h2>{project.overview.heading}</h2>
-            <p>{project.overview.description}</p>
+          <div className="pd_overview_section">
+            {/* LEFT IMAGE */}
+            <div className="pd_overview_img">
+              <img
+                src={project.overview.image}
+                alt={project.overview.heading}
+              />
+            </div>
+
+            {/* RIGHT CONTENT */}
+            <div className="pd_overview_content">
+              <h2>{project.overview.heading}</h2>
+
+              <p className="pd_overview_desc">{project.overview.description}</p>
+
+              <p className="pd_overview_desc">
+                At {project.name}, we bring you elegant residences in a prime
+                location designed for comfort, connectivity, and modern living.
+              </p>
+            </div>
           </div>
         )}
 
         {activeTab === "Highlights" && (
-          <div className="pd_highlights">
-            {project.highlights.map((h) => (
-              <div key={h.title} className="pd_highlight">
-                <div className="pd_highlight_icon">{h.icon}</div>
-                <h3>{h.title}</h3>
-                <p>{h.description}</p>
-              </div>
-            ))}
+          <div className="pd_highlights_wrapper">
+            {project.highlights.map((h) => {
+              const isImageIcon =
+                typeof h.icon === "string" &&
+                /\.(svg|png|jpe?g)(\?.*)?$/.test(h.icon);
+              const iconContent = isImageIcon ? (
+                <img src={h.icon} alt={`${h.title} icon`} />
+              ) : (
+                <span>{ICON_MAP[h.icon] || h.icon}</span>
+              );
+
+              return (
+                <div key={h.title} className="pd_highlight_item">
+                  <div className="pd_highlight_icon">{iconContent}</div>
+                  <h3>{h.title}</h3>
+                  <p>{h.description}</p>
+                </div>
+              );
+            })}
           </div>
         )}
 
         {activeTab === "Amenities" && (
-          <div className="pd_amenities">
-            {project.amenities.map((a) => (
-              <div key={a.id} className="pd_amenity">
-                <img src={a.image} alt={a.name} />
-                <p>{a.name}</p>
+          <div className="pd_gallery">
+            <div className="pd_gallery_viewport">
+              <div
+                className="pd_gallery_track"
+                style={{
+                  transform: `translateX(-${currentIndex * 40}%)`,
+                }}
+              >
+                {project.amenities.map((a, i) => (
+                  <div
+                    key={a.id}
+                    className={`pd_slide ${i === currentIndex ? "active" : ""}`}
+                  >
+                    <img src={a.image} alt={a.name} />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* CONTROLS */}
+            <div className="pd_gallery_controls">
+              <button
+                onClick={() =>
+                  setCurrentIndex(
+                    (prev) =>
+                      (prev - 1 + project.amenities.length) %
+                      project.amenities.length,
+                  )
+                }
+              >
+                {"<"}
+              </button>
+
+              <button
+                onClick={() =>
+                  setCurrentIndex(
+                    (prev) => (prev + 1) % project.amenities.length,
+                  )
+                }
+              >
+                {">"}
+              </button>
+            </div>
           </div>
         )}
 
@@ -192,7 +291,7 @@ const ProjectDetails = ({ Project_Id = null }) => {
       </div>
 
       {/* ── Mobile download button ── */}
-      <div className="pd_mobile_download">
+      {/* <div className="pd_mobile_download">
         <button
           className="pd_download_btn"
           onClick={() => alert("Download Brochure")}
@@ -201,7 +300,7 @@ const ProjectDetails = ({ Project_Id = null }) => {
           <span className="pd_btn_sep" />
           <PdfIcon />
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

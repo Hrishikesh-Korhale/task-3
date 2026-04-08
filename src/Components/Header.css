@@ -1,0 +1,93 @@
+/* Container styling */
+.headerbar {
+  background-color: #f8f6f7; /* Light off-white/pinkish tint */
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* The Logo "Card" look */
+.logo-card {
+  background: white;
+  padding: 30px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-top: 20px; /* Makes it hang lower than the bar */
+  z-index: 10;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: serif;
+  letter-spacing: 4px;
+  color: #7a5c58; /* Copper/Rose gold tone */
+}
+
+/* headerigation Links */
+.header-menu {
+  display: flex;
+  list-style: none;
+  flex-grow: 1;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header-item {
+  padding: 0 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2c3e50;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+/* Active State (Gallery) */
+.header-item.active {
+  color: #1a2a44;
+  font-weight: 700;
+  position: relative;
+}
+
+.header-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #a18cd1, #fbc2eb); /* Gradient underline */
+}
+
+/* CTA Button */
+.brochure-btn {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #1a2a44;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: #1a2a44;
+  font-weight: 600;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.pdf-icon {
+  border-left: 1px solid #ccc;
+  padding-left: 10px;
+  font-size: 18px;
+}
