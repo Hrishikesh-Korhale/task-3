@@ -24,12 +24,16 @@ export default function Construction() {
       >
         <div className="video-card">
           <div className="video-inner">
-            <img
-              src={
-                "https://img.freepik.com/free-photo/hand-word-chance-business_1150-18162.jpg?semt=ais_hybrid&w=740&q=80"
-              }
-              alt="Construction Update"
-            />
+            <iframe
+              width="633"
+              height="379"
+              src="https://www.youtube.com/embed/3x1r60l97F0"
+              title="Township Codename Pegasus Construction Update Video January 2026 | VTP Realty"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </motion.div>

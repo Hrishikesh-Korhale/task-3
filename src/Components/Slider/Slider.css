@@ -31,3 +31,28 @@
     transform: translateX(-50%);  
   }
 }
+
+/* 🔥 MOBILE ONLY */
+@media (max-width: 768px) {
+  .slider-section {
+    padding-top: 0px;
+    padding-bottom: 40px;
+  }
+
+  .slider-content {
+    gap: 20px;
+    animation-duration: 14s; /* slightly faster for mobile */
+  }
+
+  .slider-content img {
+    width: 90px;
+    height: auto;
+  }
+}
+
+/* 🔥 SMALL MOBILE */
+@media (max-width: 480px) {
+  .slider-content img {
+    width: 70px;
+  }
+}

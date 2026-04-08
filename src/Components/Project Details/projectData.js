@@ -1,60 +1,96 @@
+import icon1 from "../../assets/images/icon1.svg";
+import icon2 from "../../assets/images/icon2.svg";
+import icon3 from "../../assets/images/icon3.svg";
+import icon4 from "../../assets/images/icon4.svg";
+
+import g1 from "../../assets/images/gallery1.webp";
+import g2 from "../../assets/images/gellery2.webp";
+import g3 from "../../assets/images/gallery3.webp";
+import g4 from "../../assets/images/gallery4.webp";
+import g5 from "../../assets/images/gallery5.webp";
+
 export const Project_Details = [
   {
     id: "proj_001",
-    name: "VTP Aurelia",
+    name: "Aurelia",
     location: "Kharadi, Pune",
     status: "Under Construction",
 
     gallery: [
       {
         id: "g1",
-        url: "https://placehold.co/800x500?text=Aurelia+Exterior",
+        url: g1,
         caption: "Tower exterior",
       },
       {
-        id: "g2",
-        url: "https://placehold.co/800x500?text=Aurelia+Lobby",
-        caption: "Grand lobby",
+        id: g2,
+        url: g2,
+        caption: "Amenities",
       },
       {
-        id: "g3",
-        url: "https://placehold.co/800x500?text=Aurelia+Clubhouse",
+        id: g3,
+        url: g3,
+        caption: "Aerial view",
+      },
+      {
+        id: g4,
+        url: g3,
+        caption: "Entrance view",
+      },
+      {
+        id: g5,
+        url: g5,
         caption: "Clubhouse",
-      },
-      {
-        id: "g4",
-        url: "https://placehold.co/800x500?text=Aurelia+Pool",
-        caption: "Swimming pool",
       },
     ],
 
     overview: {
-      image: "https://placehold.co/1200x600?text=VTP+Aurelia+Overview",
-      heading: "Elegance in every detail",
+      image: g2,
+      heading: "VTP Aurelia – A Landmark Taking Shape in New Kharadi",
       description:
-        "VTP Aurelia rises gracefully in the thriving IT corridor of Kharadi, offering premium residences crafted for modern families. With lush landscaping, world-class amenities, and proximity to major employment hubs, Aurelia redefines comfortable urban living in Pune's east.",
+        "With its tall, ornate towers, delicately arched windows, majestic promenades and serene courtyards, this landmark is more than a home, it is a return to grace. Here, classical charm meets wide open spaces, and everyday life takes on the cadence of calmness. Welcome to a lifestyle designed to inspire every moment, every day.At VTP Aurelia, we bring you elegant 2 & 3 Bed Residences just minutes away from EON IT Park & WTC, in New Kharadi, Pune.",
     },
 
     highlights: [
       {
-        icon: "shield",
-        title: "Vastu Compliant",
-        description: "All units designed as per Vastu Shastra principles.",
+        icon: icon1,
+        title: "4 Towers",
+        description: "Of 36 Storeys Each",
       },
       {
-        icon: "leaf",
-        title: "Green Building",
-        description: "IGBC certified with 45% open green spaces.",
+        icon: icon2,
+        title: "European Design",
+        description: "With Modern Aesthetics",
       },
       {
-        icon: "bolt",
-        title: "24×7 Power Backup",
-        description: "100% power backup for all common areas and apartments.",
+        icon: icon3,
+        title: "Near To",
+        description: "EON IT Park & WTC",
       },
       {
-        icon: "drop",
-        title: "Rainwater Harvesting",
-        description: "On-site rainwater harvesting and water recycling plant.",
+        icon: icon4,
+        title: "Next To",
+        description: "BAIF Forest",
+      },
+      {
+        icon: icon1,
+        title: "Majestic Amenities",
+        description: "For All Age Group",
+      },
+      {
+        icon: icon2,
+        title: "100%",
+        description: "Privacy & Open Views",
+      },
+      {
+        icon: icon3,
+        title: "Lush",
+        description: "Greenery & Open Spaces",
+      },
+      {
+        icon: icon4,
+        title: "Township Living",
+        description: "With 8000+ Families",
       },
     ],
 
@@ -64,54 +100,35 @@ export const Project_Details = [
         carpetAreaMin: 680,
         carpetAreaMax: 780,
         unit: "sq.ft.",
-        price: null,
       },
       {
         configuration: "3 BHK",
         carpetAreaMin: 1050,
         carpetAreaMax: 1250,
         unit: "sq.ft.",
-        price: null,
-      },
-      {
-        configuration: "3.5 BHK",
-        carpetAreaMin: 1350,
-        carpetAreaMax: 1450,
-        unit: "sq.ft.",
-        price: null,
       },
     ],
 
     amenities: [
       {
-        id: "a1",
+        id: "g1",
         name: "Swimming Pool",
-        image: "https://placehold.co/400x300?text=Pool",
+        image: g5,
       },
       {
-        id: "a2",
+        id: "g1",
         name: "Gymnasium",
-        image: "https://placehold.co/400x300?text=Gym",
+        image: g2,
       },
       {
-        id: "a3",
+        id: "g1",
         name: "Kids Play Area",
-        image: "https://placehold.co/400x300?text=Kids+Play",
+        image: g4,
       },
       {
-        id: "a4",
-        name: "Multipurpose Hall",
-        image: "https://placehold.co/400x300?text=Hall",
-      },
-      {
-        id: "a5",
-        name: "Jogging Track",
-        image: "https://placehold.co/400x300?text=Track",
-      },
-      {
-        id: "a6",
-        name: "Landscaped Gardens",
-        image: "https://placehold.co/400x300?text=Garden",
+        id: "g1",
+        name: "Clubhouse",
+        image: g1,
       },
     ],
   },
